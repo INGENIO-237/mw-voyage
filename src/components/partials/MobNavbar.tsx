@@ -18,7 +18,7 @@ export default function MobNavbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="md:hidden">
+    <nav className="md:hidden z-20">
       <Menu size={25} onClick={toggleSheet} />
 
       <Sheet open={showSheet} onOpenChange={toggleSheet}>

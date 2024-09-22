@@ -5,7 +5,7 @@ export const navLinks = [
   },
   {
     name: "services",
-    path: "/experience",
+    path: "/#services",
   },
   {
     name: "Destinations",

@@ -9,7 +9,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="hidden md:flex md:gap-10 md:items-center">
+    <div className="hidden md:flex md:gap-10 md:items-center z-20">
       <ul className="flex gap-5">
         {navLinks.map((link) => {
           return (
@@ -17,9 +17,9 @@ export default function Navbar() {
               href={link.path}
               key={getKey()}
               className={cn(
-                "text-lg capitalize",
+                "text-md capitalize",
                 pathname == link.path &&
-                  "text-secondary",
+                  "text-secondary border-b-2",
                 "hover:text-secondary transition duration-500"
               )}
             >

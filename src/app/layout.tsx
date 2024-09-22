@@ -6,7 +6,7 @@ import Wrapper from "@/components/AppWrapper";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
