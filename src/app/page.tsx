@@ -10,10 +10,15 @@ import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
 import Heading from "@/components/ui/Heading";
 import { getKey } from "@/lib/utils";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   // const images =
+
+  useEffect(() => {
+    document.documentElement.classList.remove(".dark");
+    document.documentElement.classList.add(".light");
+  }, []);
 
   const services = [
     {
@@ -52,7 +57,7 @@ export default function Home() {
       </motion.div>
 
       {/* Intro */}
-      <div className="flex flex-col-reverse md:flex-row md:justify-between mb-10">
+      <div className="flex flex-1 flex-col-reverse md:flex-row md:justify-between mb-10">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -93,17 +98,17 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <div id="services" className="relative my-5">
+      <div id="services" className="relative my-5 min-h-[250px]">
         <Image
           src={Stars}
           alt="stars"
           className="absolute top-0 right-0 z-1 pointer-events-none"
         />
 
-        <div className="flex flex-col items-center justify-center md:items-start space-y-3 z-99">
-          <h1 className="text-primary text-lg font-semibold">SERVICES</h1>
-          <Heading>We Offer Best Services</Heading>
-          <p className="text-center font-medium">
+        <div className="flex flex-col items-center justify-center md:items-start space-y-3">
+          <h1 className="text-primary text-lg font-semibold z-20">SERVICES</h1>
+          <Heading className="z-20">We Offer Best Services</Heading>
+          <p className="text-center font-medium z-20">
             Built Wicket longer admire do barton vanity itself do in it.
             Preferred to sportsmen it engrossed listening.
           </p>
@@ -124,7 +129,9 @@ export default function Home() {
                 >
                   <div className="">
                     <h1 className="text-xl font-semibold">{service.title}</h1>
-                    <p className="text-lg text-gray-500">{service.description}</p>
+                    <p className="text-lg text-gray-500">
+                      {service.description}
+                    </p>
                   </div>
                 </motion.div>
               )
