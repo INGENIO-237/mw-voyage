@@ -98,7 +98,7 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <div id="services" className="relative my-5">
+      <div id="services" className="relative my-5 min-h-[250px]">
         <Image
           src={Stars}
           alt="stars"
